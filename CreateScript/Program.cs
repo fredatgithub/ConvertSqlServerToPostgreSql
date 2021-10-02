@@ -16,9 +16,9 @@ namespace CreateScript
       display("creating a script for a database");
       display(string.Empty);
       display("Please wait for the script to gather all SQL schema objects...");
-      string serverName = "yourDatabaseNameHere";
+      string serverName = "yourDatabaseNameHere"; // yourDatabaseNameHere
       string result = CreateSMOScript(serverName);
-      using (StreamWriter sw = new StreamWriter($"{serverName}.sql"))
+      using (StreamWriter sw = new StreamWriter($"CreateAllTablesFor{serverName}.sql"))
       {
         sw.WriteLine(result);
       }
@@ -46,7 +46,7 @@ namespace CreateScript
       scrp.Options.FullTextIndexes = true;
       scrp.Options.NoCollation = false;
       scrp.Options.Bindings = true;
-      scrp.Options.IncludeIfNotExists = false;
+      scrp.Options.IncludeIfNotExists = true;
       scrp.Options.ScriptBatchTerminator = true;
       scrp.Options.ExtendedProperties = true;
 
