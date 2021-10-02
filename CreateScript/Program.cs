@@ -8,9 +8,9 @@ using System.Text;
 
 namespace CreateScript
 {
-  class Program
+  internal static class Program
   {
-    static void Main(string[] args)
+    static void Main()
     {
       Action<string> display = Console.WriteLine;
       display("creating a script for a database");
