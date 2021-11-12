@@ -53,6 +53,10 @@ namespace CreateScript
       scrp.PrefetchObjects = true; // some sources suggest this may speed things up
 
       var urns = new List<Urn>();
+      if (db is null)
+      {
+        return string.Empty ;
+      }
 
       // Iterate through the tables in database and script each one   
       foreach (Table tb in db.Tables)
